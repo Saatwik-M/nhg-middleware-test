@@ -13,7 +13,7 @@ app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 const jwt_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTMzOWY0MmY0LTRlMmItNWQ0ZC04YjBjLWZmM2M4NTYxY2QyNCIsInN1YiI6IjEyMzQ1NjY2In0.ALuD8MTJxKTH7LnnT5tsvH2wocHy64PTUC4AKU1PASk'
 const kore_url = 'https://bots.kore.ai/chatbot/hooks/st-120802d5-dc79-515d-822c-3c3e378ad904'
 const workplace_token = 'lfgierajg50498723fgfoiprejg9045jfpe48943jrt034jfg'
-const workplace_access_token = 'DQVJzTWNVaVJWZAk1mcnBqWjZA5aFZAoUG16V05oemltdlhnQkhkMGlBV3UybG1SeXd5dFd2c0JncTJSZAkdadTVUSWxBTHp4d2M0ZA2hqWmIwbDBqZAHFVeHhmYW8xdVE2SUNqdjZAvY0JGMzA3NUREajdDN25GVEt5Y3NKUTRzQ19uQ0FrUWgxcmVNdTNEa1poUFZASVjJvLW4wQndMQ0Nhdzd1WWVoUnVWaS1mUFRiSnkxOFhsMUVpblhEOE1LY3FaakpzRzJJN0gybmI4NTlaRVJWdgZDZD'
+const workplace_access_token = 'DQVJ0aWNjVzhKZAndGSHZAKNFdZAWFdCNm9oNG4yZAEFBY2oxYnhkeHZAmZA1dsU1JXbEc5YUdPR0VXaGdaS281Wk1jc3d0a1NNS3RFMFRVQTM4cU1qZAW9TLVZABbkdWdmw1T2tlSERyeFdwbllzazFzOElkaGR6eU9Jdl9LRC1IWklmWnBRS2dtQ1F3VHMxZA19tWGpNTWx5QnNyVlYzUFg0VVpiNXFpejQzUjdJS3llNHMwTjFhNXI2aHEwU25PWHFfUURscVBaQjV3'
 const wokplace_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=' + workplace_access_token
 
 // Function to send message to kore, get response and then forward it to workplace
@@ -129,9 +129,6 @@ function senResToWp(message, id) {
 app.post('/middleware', (req, res) => {  
  
     let body = req.body;
-    console.log('========================================================');
-    console.log(body);
-    console.log('========================================================');
 
     // Checks this is an event from a page subscription
     if (body.object === 'page') {
