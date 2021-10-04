@@ -10,11 +10,13 @@ const
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 // Configs
-const jwt_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTMzOWY0MmY0LTRlMmItNWQ0ZC04YjBjLWZmM2M4NTYxY2QyNCIsInN1YiI6IjEyMzQ1NjY2In0.ALuD8MTJxKTH7LnnT5tsvH2wocHy64PTUC4AKU1PASk'
-const kore_url = 'https://bots.kore.ai/chatbot/hooks/st-120802d5-dc79-515d-822c-3c3e378ad904'
-const workplace_token = 'lfgierajg50498723fgfoiprejg9045jfpe48943jrt034jfg'
-const workplace_access_token = 'DQVJ0aWNjVzhKZAndGSHZAKNFdZAWFdCNm9oNG4yZAEFBY2oxYnhkeHZAmZA1dsU1JXbEc5YUdPR0VXaGdaS281Wk1jc3d0a1NNS3RFMFRVQTM4cU1qZAW9TLVZABbkdWdmw1T2tlSERyeFdwbllzazFzOElkaGR6eU9Jdl9LRC1IWklmWnBRS2dtQ1F3VHMxZA19tWGpNTWx5QnNyVlYzUFg0VVpiNXFpejQzUjdJS3llNHMwTjFhNXI2aHEwU25PWHFfUURscVBaQjV3'
-const wokplace_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=' + workplace_access_token
+const config = require('./config/config.js');
+
+const jwt_token = config.JWT_TOKEN
+const kore_url = config.KORE_URL
+const workplace_token = config.WP_TOKEN
+const workplace_access_token = config.WP_ACCESS
+const wokplace_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=' + config.WP_URL
 
 // Function to send message to kore, get response and then forward it to workplace
 function getResFromKore(message, id) {
